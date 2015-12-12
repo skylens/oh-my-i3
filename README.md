@@ -1,5 +1,7 @@
 # oh-my-i3
 
+带给你一个不一样的i3wm！
+
 ![0](https://github.com/JH623/screenshot/blob/master/oh-my-i3/0.png)
 
 ## 依赖
@@ -23,7 +25,7 @@ sh install.sh
 
 ## 快捷键
 
-- mod键默认为windows键
+- $mod键默认为windows键
 - $mod+Enter打开终端
 - $mod+1~10切换工作区
 - $mod+w/s/a/d 上下左右切换窗口
@@ -52,8 +54,9 @@ xset dpms 900
 
 ## 更多的特性：
 
-- dmenu样式: 与ibar统一样式，等宽覆盖。需4.6版本支持。
-- 智能启动 : 添加智能启动脚本st（虽然很笨），当绑定一个程序到一个工作区，切换到该工作区时自动检测程序运行状态，若无运行则运行，反之不运行，避免了重复运行。
+- dmenu样式：与ibar统一样式，等宽覆盖。需4.6版本支持。
+- 图标字体：更直观更美观。
+- 智能启动：添加智能启动脚本st（虽然很笨），避免重复运行。
 
 ![2](https://github.com/JH623/screenshot/blob/master/oh-my-i3/2.png)
 
