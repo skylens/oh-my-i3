@@ -1,0 +1,39 @@
+# ===================================================================
+#                            conky_bar
+# Date    : 12/12/2015
+# Author  : Allen_Qiu
+# Version : v1.0
+#
+# 这份配置文件为conky1.10之前配置格式
+# 1.10后采用lua语法：
+# 注释格式由# 改为-- TEXT部分注释不变
+# 配置部分用conky.config = { ... }包裹，使用true/false替换yes/no，除true/false和数字外的值都须用引号包裹，并在行末加上,
+# TEXT部分用conky.text = [[ ... ]]包裹来替换TEXT，注释仍为#
+# ===================================================================
+
+# 不输出到X
+out_to_x no
+out_to_console yes
+background no
+double_buffer no
+# 刷新时间
+update_interval 1
+# 运行时间，0为一直运行
+total_run_times 0
+# 强制uft8编码，需xft支持
+override_utf8_locale no
+# 缩写单位字符 比如kib->k Gib->G 默认为off
+short_units yes
+# 监视端口
+if_up_strictness address
+# cpu数据监测模式，一般选2
+cpu_avg_samples 2
+
+TEXT
+ ${upspeed wlan0}/s  ${downspeed wlan0}/s \
+ ${cpu cpu0}% \
+ ${mem} \
+ ${fs_used /} \
+ ${battery_percent}% \
+${execi 1 amixer | grep -A5 'Master' | sed -n '6p' | sed 's/ \[on\]//g' | sed 's/.*\[[0-9]\+%\] \[off\]/ /g' | sed 's/.*\[\([0-9]\+%\)\]\(.*\)/\2 \1/g' | sed 's/ \([01234]\?[0-9]\{1\}%\)/ \1/g' | sed 's/[]\{1\} 0%/ 0%/g'} \
+ ${time %H:%M}\
