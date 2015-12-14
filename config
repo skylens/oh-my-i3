@@ -37,10 +37,10 @@ set $WS9  9:
 set $WS0 10:
 
 # => 工作区切换&智能启动（添加智能启动脚本~/bin/st 自动且不重复打开工作区相应程序）
-# 自动切换到新打开的窗口
-focus_on_window_activation focus
+# 自动切换到新打开的窗口(需4.12版本支持)
+#focus_on_window_activation focus
 # 重复切换到当前工作区时会返回上一个所在工作区，若发现工作区错位请注释掉以下这一行
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 # 注释部分请依据个人喜好更改并取消注释，且把i3-sensible-terminal替换为常用term
 bindsym $mod+1 workspace $WS1, exec --no-startup-id ~/bin/st xfce4-terminal
 bindsym $mod+2 workspace $WS2, exec --no-startup-id ~/bin/st google-chrome
@@ -144,14 +144,14 @@ bindsym $mod+minus scratchpad show
 # => 重新载入（更改配置文件后只须重载即可生效，不包含自启部分）
 bindsym mod1+Shift+r restart
 
-# => 电源管理（默认Pause Break键呼出，非systemd启动请做相应更改）
+# => 电源管理（Pause Break键呼出)
 set $mode_system 系统:锁屏(L) 注销(O) 重启(R) 关机(S) 取消(Esc)
 bindsym Pause mode "$mode_system"
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3lock -c '#333333', exec sleep .1 && exec xset dpms force off, mode "default"
     bindsym o exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym r exec --no-startup-id /sbin/reboot, mode "default"
+    bindsym s exec --no-startup-id /sbin/poweroff, mode "default"
     bindsym Escape mode "default"
 }
 
@@ -172,7 +172,7 @@ client.background       #FFFFFF
 bindsym $mod+m bar mode toggle
 bar {
     # i3bar调用
-    status_command conky -c ~/.config/i3/conkyrc_bar
+    status_command conky -c $HOME/.config/i3/conkyrc_bar
     # 显示位置top/bottom
     #position top
     # 是否隐藏
@@ -192,6 +192,6 @@ bar {
         active_workspace   #FFFFFF #FFFFFF #FFFFFF
         inactive_workspace #333333 #333333 #FFFFFF
         urgent_workspace   #990000 #990000 #FFFFFF
-        binding_mode       #990000 #990000 #FFFFFF
+        #binding_mode       #990000 #990000 #FFFFFF
     }
 }
