@@ -4,7 +4,7 @@ mkdir ~/bin ~/.fonts ~/.config/i3 > /dev/null 2>&1
 cp -uvr font-awesome Monaco.ttf ~/.fonts
 cp -iuv config conkyrc_bar ~/.config/i3/
 cp -iuv st ~/bin/
-NET=`/sbin/ifconfig | awk 'BEGIN{FS=":"}/192/{print a}{a=$1}'`
+NET=`/sbin/ifconfig | awk '/192/{print a}{a=$1}' | sed 's/://g'`
 C=~/.config/i3/config
 sed -i "s/wlan0/$NET/g" ~/.config/i3/conkyrc_bar
 if [ "`md5sum $C|cut -d ' ' -f1`" = "`md5sum config|cut -d ' ' -f1`" ];then
