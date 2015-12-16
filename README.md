@@ -7,18 +7,21 @@
 ## 依赖
 
 - 调用conky作为i3bar输出
+- dmenu启动程序
 - feh显示壁纸
 - xcompmgr透明插件（可选）
-- freetype-infinality字体渲染美化（可选）
+- infinality字体渲染美化（可选）
 
 ## 字体
 
-- Monaco:一个很好看的等宽英文字体，非常适用于写代码，若显示不佳请用freetype-infinality渲染
-- font-awesome:开源的图标字体，可通过简单地复制粘贴使用，具体查看：http://fortawesome.github.io/Font-Awesome/cheatsheet/
+- Monaco:一个很好看的等宽英文字体，非常适用于写代码，若显示不佳请用infinality渲染
+- font-awesome:开源的图标字体，可通过简单地复制粘贴使用，具体查看:
+http://fortawesome.github.io/Font-Awesome/cheatsheet/
 
 ## 安装
 
-先行安装好i3（一个不到1M的WM:)
+先行安装所需程序:i3 dmenu feh
+
 ```bash
 # 克隆oh-my-i3到本地
 git clone https://github.com/ID1258/oh-my-i3.git
@@ -27,7 +30,8 @@ cd oh-my-i3
 # 安装
 sh install.sh
 ```
-若已运行i3需要`$mod+Shift+R`重载入配置
+
+若已运行i3需要 `Alt+Shift+R` 重载入配置
 
 ## 快捷键
 
@@ -43,9 +47,9 @@ sh install.sh
 #!/bin/sh
 
 # 关闭嘟嘟的警告声
-xset -b off
+xset -b
 # 一段时间无操作自动关闭屏幕
-xset dpms 900
+xset dpms 600
 
 # 笔记本触摸板设置
 # TapButton定义鼠标左/中/右键分别为单指/双指/三指操作
@@ -65,9 +69,12 @@ xset dpms 900
 - dmenu样式：与ibar统一样式，字体支持，等宽覆盖。请先更新至4.6版本。
 - 图标字体：更直观更美观。
 - 智能启动：添加智能启动脚本st（虽然很笨），简化启动，避免重复运行。
+- 更多:靠你们来拯救世界了！
 
 ![2](https://github.com/JH623/screenshot/blob/master/oh-my-i3/2.png)
 
-- 更多:靠你们来拯救世界了！
+## 版本更新
+
+- 2015/12/16 v1.1 兼容conky1.10并优化配置,优化st脚本和安装脚本
 
                                                   Allen Qiu
