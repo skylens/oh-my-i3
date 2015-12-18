@@ -44,7 +44,7 @@ set $WS0 10:
 # 注释部分请依据个人喜好更改并取消注释，且把i3-sensible-terminal替换为常用term
 bindsym $mod+1 workspace $WS1, exec --no-startup-id ~/bin/st xfce4-terminal
 bindsym $mod+2 workspace $WS2, exec --no-startup-id ~/bin/st google-chrome
-bindsym $mod+3 workspace $WS3, exec --no-startup-id WizNote
+bindsym $mod+3 workspace $WS3, exec --no-startup-id WizNote > /dev/null 2>&1
 bindsym $mod+4 workspace $WS4, exec --no-startup-id ~/bin/st smplayer
 bindsym $mod+5 workspace $WS5, exec --no-startup-id ~/bin/st thunar
 bindsym $mod+6 workspace $WS6, exec --no-startup-id ~/bin/st virtualbox
@@ -145,13 +145,13 @@ bindsym $mod+minus scratchpad show
 bindsym mod1+Shift+r restart
 
 # => 电源管理（Pause Break键呼出)
-set $mode_system 系统:锁屏(L) 注销(O) 重启(R) 关机(S) 取消(Esc)
+set $mode_system 系统:锁屏(L) 注销(O) 关机(S) 重启(R) 取消(Esc)
 bindsym Pause mode "$mode_system"
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock -c '#333333', exec sleep .1 && exec xset dpms force off, mode "default"
-    bindsym o exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym l exec i3lock -c '#333333', exec sleep .1 && exec xset dpms force off, mode "default"
+    bindsym o exec i3-msg exit
+    bindsym s exec systemctl poweroff
+    bindsym r exec systemctl reboot
     bindsym Escape mode "default"
 }
 
