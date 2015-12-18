@@ -173,7 +173,7 @@ bindsym $mod+m bar mode toggle
 bar {
     # i3bar调用
     status_command conky -c $HOME/.config/i3/conkyrc_bar
-    # 显示位置top/bottom
+    # 显示位置
     #position top
     # 是否隐藏
     #mode hide
