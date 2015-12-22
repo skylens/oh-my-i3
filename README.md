@@ -41,27 +41,6 @@ sh install.sh
 - $mod+w/s/a/d 上下左右切换窗口
 - 更多请查看~/.config/i3/config，并根据自己的习惯进行更改
 
-## 建议的开机启动项（写入到~/bin/RC，并在config中取消注释）
-
-```bash
-#!/bin/sh
-
-# 关闭嘟嘟的警告声
-xset -b
-# 一段时间无操作自动关闭屏幕
-xset dpms 600
-
-# 笔记本触摸板设置
-# TapButton定义鼠标左/中/右键分别为单指/双指/三指操作
-# ScrollDelta为滚屏速度，值越接近0速度越快，负数为自然划屏，类似手机划屏
-#synclient -l TapButton1=1
-#synclient -l TapButton2=2
-#synclient -l TapButton3=3
-#synclient -l VertScrollDelta=-107
-#synclient -l HorizScrollDelta=-107
-
-```
-
 ![1](https://github.com/JH623/screenshot/blob/master/oh-my-i3/1.png)
 
 ## 更多的特性：
