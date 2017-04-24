@@ -1,23 +1,23 @@
 ######################################################################
 #                            oh-my-i3
-# Date    : 12/12/2015
-# Author  : Allen_Qiu
-# Version : v1.1
+# Date    : 4/24/2017
+# Author  : skylens
+# fork from : ID1258/oh-my-i3
 #
 # 依赖:conky feh (可选推荐:xcompmgr freetype-infinality)
 # 部分特性可能需要新版本支持，请更新至最新版本或自行修改相应部分
 # 更多内容请参考:
 # i3 User’s Guide: http://i3wm.org/docs/userguide.html
-# oh-my-i3 github: https://github.com/ID1258/oh-my-i3.git
+# oh-my-i3 github: https://github.com/skylens/oh-my-i3.git
 #
 ######################################################################
 
 # => 开机自启（根据需要取消相应的注释#）
 # 壁纸须先安装feh，并在此指定路径
-exec --no-startup-id feh --bg-scale "$HOME/oh-my-i3/wallpaper.jpg"
+# exec --no-startup-id feh --bg-scale "$HOME/oh-my-i3/wallpaper.jpg"
 # 设置透明须先安装xcompmgr，并在此指定软件和透明度（默认0.75），sleep保证transset在其所设置的软件之后启动，根据情况调节大小
-#exec --no-startup-id xcompmgr &
-#exec --no-startup-id sleep .2 && exec transset -n i3bar 0.75
+# exec --no-startup-id xcompmgr &
+# exec --no-startup-id sleep .2 && exec transset -n i3bar 0.75
 # 建议另外指定一个脚本来启动通用的开机自启项目
 exec --no-startup-id $HOME/bin/RC
 # 总有一些奇葩无法正常用脚本启动
@@ -172,7 +172,7 @@ client.background       #FFFFFF
 bindsym $mod+m bar mode toggle
 bar {
     # i3bar调用
-    status_command conky -c $HOME/.config/i3/conkyrc_bar
+    # status_command conky -c $HOME/.config/i3/conkyrc_bar
     # 显示位置
     #position top
     # 是否隐藏
